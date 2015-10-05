@@ -1,0 +1,7 @@
+%Demo distmesh esfera
+clear
+[p,t] = distmesh(@dsphere,@huniform,0.15,[-1 -1 -1; 1 1 1],[],0,0,0,1);
+cameratoolbar;
+[T,P] = freeBoundary(TriRep(t,p));
+figure;
+trisurf(T,P[:,1],P[:,2],P)
